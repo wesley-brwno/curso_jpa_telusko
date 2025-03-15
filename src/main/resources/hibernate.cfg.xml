@@ -7,7 +7,7 @@
 	<hibernate-configuration>
 		<session-factory>
 			<property name="connection.driver_class">org.postgresql.Driver</property>
-			<property name="connection.url">jdbc:postgresql://localhost:5432/data_jpa</property>
+			<property name="connection.url">jdbc:postgresql://localhost:5432/ch2</property>
 			<property name="connection.user">postgres</property>
 			<property name="connection.password">postgres</property>
 			
