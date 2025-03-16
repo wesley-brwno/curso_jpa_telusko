@@ -1,7 +1,7 @@
 package com.learn.jpa.HibernateProject;
 
 
-import com.learn.jpa.telusko.Alian;
+import com.learn.jpa.telusko.Alien;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -12,12 +12,12 @@ import org.hibernate.service.ServiceRegistry;
 
 public class App {
     public static void main(String[] args) {
-        Alian telusko = new Alian();
+        Alien telusko = new Alien();
         telusko.setAid(104);
         telusko.setAname("Nibbler");
         telusko.setColor("Black");
 
-        Configuration configuration = new Configuration().configure().addAnnotatedClass(Alian.class);
+        Configuration configuration = new Configuration().configure().addAnnotatedClass(Alien.class);
 
         ServiceRegistry reg = new StandardServiceRegistryBuilder()
                 .applySettings(configuration.getProperties())

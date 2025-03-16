@@ -1,14 +1,16 @@
 package com.learn.jpa.telusko;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
-public class Alian {
+@Table(name = "alien_table_2")
+public class Alien {
 
     @Id
     private int aid;
+    @Transient
     private String aname;
+    @Column(name = "alien_color")
     private String color;
 
 
