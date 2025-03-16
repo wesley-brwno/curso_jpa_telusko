@@ -8,8 +8,7 @@ public class Alien {
 
     @Id
     private int aid;
-    private String aname;
-    @Column(name = "alien_color")
+    private AlianName aname;
     private String color;
 
 
@@ -21,11 +20,11 @@ public class Alien {
         this.aid = aid;
     }
 
-    public String getAname() {
+    public AlianName getAname() {
         return aname;
     }
 
-    public void setAname(String aname) {
+    public void setAname(AlianName aname) {
         this.aname = aname;
     }
 
