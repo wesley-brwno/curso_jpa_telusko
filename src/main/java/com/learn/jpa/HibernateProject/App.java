@@ -13,9 +13,7 @@ import org.hibernate.service.ServiceRegistry;
 public class App {
     public static void main(String[] args) {
         Alien telusko = new Alien();
-        telusko.setAid(104);
-        telusko.setAname("Nibbler");
-        telusko.setColor("Black");
+
 
         Configuration configuration = new Configuration().configure().addAnnotatedClass(Alien.class);
 
@@ -29,8 +27,11 @@ public class App {
 
         Transaction tx = session.beginTransaction();
 
-        session.save(telusko);
+        telusko = session.get(Alien.class, 104);
+
 
         tx.commit();
+
+        System.out.println(telusko);
     }
 }
