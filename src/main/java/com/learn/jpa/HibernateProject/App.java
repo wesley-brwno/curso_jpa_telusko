@@ -17,12 +17,15 @@ public class App {
 
         LapTop lapTop = new LapTop();
         lapTop.setLid(101);
-        lapTop.setLname("Dell");
+        lapTop.setLname("Asus");
 
         Student student = new Student();
         student.setName("Ekko");
         student.setMarks(50);
         student.setRollno(1);
+        student.getLapTops().add(lapTop);
+
+        lapTop.getStudents().add(student);
 
 
         Configuration configuration = new Configuration()

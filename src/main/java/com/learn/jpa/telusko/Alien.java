@@ -3,7 +3,6 @@ package com.learn.jpa.telusko;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "alien_table_2")
 public class Alien {
 
     @Id

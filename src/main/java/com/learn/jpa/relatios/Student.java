@@ -1,7 +1,9 @@
 package com.learn.jpa.relatios;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Student {
@@ -10,6 +12,8 @@ public class Student {
     private int rollno;
     private String name;
     private int marks;
+    @ManyToMany()
+    private List<LapTop> lapTops = new ArrayList<>();
 
     public int getRollno() {
         return rollno;
@@ -33,6 +37,14 @@ public class Student {
 
     public void setMarks(int marks) {
         this.marks = marks;
+    }
+
+    public List<LapTop> getLapTops() {
+        return lapTops;
+    }
+
+    public void setLapTops(List<LapTop> lapTops) {
+        this.lapTops = lapTops;
     }
 
     @Override
