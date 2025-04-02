@@ -1,6 +1,10 @@
 package com.learn.jpa.telusko;
 
+import com.learn.jpa.relatios.LapTop;
 import jakarta.persistence.*;
+
+import java.util.ArrayList;
+import java.util.Collection;
 
 @Entity
 public class Alien {
@@ -9,7 +13,8 @@ public class Alien {
     private int aid;
     private AlianName aname;
     private String color;
-
+    @OneToMany(mappedBy = "alien", fetch = FetchType.EAGER)
+    private Collection<LapTop> laps = new ArrayList<>();
 
     public int getAid() {
         return aid;

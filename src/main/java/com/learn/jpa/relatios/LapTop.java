@@ -1,9 +1,9 @@
 package com.learn.jpa.relatios;
 
-import jakarta.persistence.*;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.learn.jpa.telusko.Alien;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class LapTop {
@@ -11,15 +11,15 @@ public class LapTop {
     @Id
     private int lid;
     private String lname;
-    @ManyToMany(mappedBy = "lapTops")
-    private List<Student> students = new ArrayList<>();
+    @ManyToOne
+    private Alien alien;
 
-    public List<Student> getStudents() {
-        return students;
+    public Alien getAlien() {
+        return alien;
     }
 
-    public void setStudents(List<Student> students) {
-        this.students = students;
+    public void setAlien(Alien alien) {
+        this.alien = alien;
     }
 
     public int getLid() {

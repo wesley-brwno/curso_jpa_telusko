@@ -16,16 +16,9 @@ public class App {
     public static void main(String[] args) {
 
         LapTop lapTop = new LapTop();
-        lapTop.setLid(101);
+
         lapTop.setLname("Asus");
-
-        Student student = new Student();
-        student.setName("Ekko");
-        student.setMarks(50);
-        student.setRollno(1);
-        student.getLapTops().add(lapTop);
-
-        lapTop.getStudents().add(student);
+        lapTop.setLid(101);
 
 
         Configuration configuration = new Configuration()
@@ -44,8 +37,7 @@ public class App {
 
         Transaction tx = session.beginTransaction();
 
-        session.save(lapTop);
-        session.save(student);
+        Alien a1 = session.get(Alien.class, 1);
 
         tx.commit();
     }
